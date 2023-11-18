@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 
 export default function Users({ users }) {
-  console.log(users);
   return (
     <ul>
       {users.map((user) => (

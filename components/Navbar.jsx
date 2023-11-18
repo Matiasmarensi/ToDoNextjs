@@ -5,9 +5,9 @@ export default function Navbar() {
   return (
     <nav className="navBar py-5">
       <Link href="/">
-        <h1 className="text-3xl font-bold">Lista de Tareas</h1>
+        <h1 className="text-3xl font-bold text-cyan-950">Lista de Tareas</h1>
       </Link>
-      <ul>
+      <ul className="font-bold text-cyan-950">
         <li>
           <Link href="/">Home</Link>
         </li>
@@ -15,7 +15,7 @@ export default function Navbar() {
           <Link href="/about">About</Link>
         </li>
         <li>
-          <Link href="/posts">Posts</Link>
+          <Link href="/">Users</Link>
         </li>
       </ul>
     </nav>
