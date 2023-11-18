@@ -1,0 +1,15 @@
+.navBar{
+    background-color: white;
+    justify-content: space-between;
+    display: flex;
+    padding: 0 4rem;
+    align-items: center;
+}
+.navBar ul{
+    display: flex;
+    gap:1rem
+
+}
+.navBar ul li{
+    list-style: none;
+}
