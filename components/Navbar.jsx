@@ -9,7 +9,7 @@ export default function Navbar() {
       </Link>
       <ul className="font-bold text-cyan-950">
         <li>
-          <Link href="/">Home</Link>
+          <Link href="/new">New</Link>
         </li>
         <li>
           <Link href="/about">About</Link>
