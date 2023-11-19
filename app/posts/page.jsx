@@ -9,7 +9,7 @@ async function loadPost() {
 
 export default async function PostPages() {
   const post = await loadPost();
-
+  console.log(post);
   return (
     <div className="grid">
       {post.map((post) => (

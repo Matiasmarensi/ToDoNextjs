@@ -15,7 +15,7 @@ export async function PUT(req, { params }) {
     data: data,
   });
 
-  return NextResponse.json(data);
+  return NextResponse.json(taskUpdated);
 }
 export async function DELETE(req, { params }) {
   try {

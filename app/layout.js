@@ -5,7 +5,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Navbar />
-        <main className="my-5 py-5 container  justify-center  flex items-center">{children}</main>
+        <main className="">{children}</main>
       </body>
     </html>
   );
