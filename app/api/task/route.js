@@ -2,17 +2,18 @@ import { NextResponse } from "next/server";
 import { prisma } from "../../libs/prisma";
 
 export async function GET() {
-  const task = await prisma.task.findMany();
-  console.log(task);
-  return NextResponse.json({
-    message: "obteniendo tareas",
-  });
+  const tasks = await prisma.task.findMany();
+
+  return NextResponse.json(tasks);
 }
 
-export function POST() {
-  return NextResponse.json({
-    message: "creando tareas",
+export async function POST(request) {
+  const data = await request.json();
+
+  const newTask = await prisma.task.create({
+    data: { title: data.title, description: data.description },
   });
+  return Response.json(newTask);
 }
 
 export function PUT() {
