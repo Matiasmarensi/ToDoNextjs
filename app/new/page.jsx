@@ -69,7 +69,24 @@ export default function NewPage({ params }) {
           rows="10"
           onChange={(e) => setDescription(e.target.value)}
         ></textarea>
-        <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md ">Crear</button>
+        <div className=" flex justify-between">
+          <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md ">Crear</button>
+          {params.id && (
+            <button
+              onClick={async () => {
+                const res = await fetch(`/api/task/${params.id}`, {
+                  method: "DELETE",
+                });
+                const data = await res.json();
+                router.push("/");
+              }}
+              type="button"
+              className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md "
+            >
+              Eliminar
+            </button>
+          )}
+        </div>
       </form>
     </div>
   );
