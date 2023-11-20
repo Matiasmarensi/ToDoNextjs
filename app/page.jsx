@@ -1,15 +1,27 @@
 "use client";
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import TaskCards from "@/components/TaskCards";
+
 async function loadTask() {
-  const res = await fetch("http://localhost:3000/api/task/");
+  const res = await fetch("/api/task");
   const data = await res.json();
+  console.log(data);
   return data;
 }
 
-async function Home() {
-  const tasks = await loadTask();
+function Home() {
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    // Definimos una función dentro del useEffect para poder usar async/await.
+    const fetchData = async () => {
+      const data = await loadTask();
+      setTasks(data);
+    };
+
+    // Llamamos a la función de carga solo cuando el componente se monta.
+    fetchData();
+  }, []); // El array vacío significa que el useEffect se ejecuta solo después del montaje inicial.
 
   return (
     <section className="flex justify-center my-10 py-4">
