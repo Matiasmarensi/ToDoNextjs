@@ -3,7 +3,7 @@ import React from "react";
 import { useEffect } from "react";
 import TaskCards from "@/components/TaskCards";
 async function loadTask() {
-  const res = await fetch("http://localhost:3000/api/task");
+  const res = await fetch("/api/task");
   const data = await res.json();
   return data;
 }
